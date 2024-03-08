@@ -4,19 +4,6 @@ body{
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.containerStart {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    border-radius: 15px;
-    padding: 15px;
-    background-color: rgb(219, 0, 0);
-    border: solid;
-    width: 350px;
-    height: 295px;
-}
-
 .title{
     text-align: center;
     font-family: 'Pokemon Solid', sans-serif;
@@ -24,15 +11,6 @@ body{
     margin-top: 10px;
     margin-bottom: 10px;
                                                 
-}
-
-
-
-#img{
-    width: 300px;
-    height: 120px;
-    margin: 7px;
-    margin-bottom: 25px;
 }
 
 .containerPokedex {
@@ -48,15 +26,24 @@ body{
     height: 750px;
 }
 
-
 .pokeImg{
+    width: 100px;
+    height: 80px;
+    left: 130px;
+    top: 115px;
+    position: absolute;
+}
+
+#backgroundPoke{
     width: 200px;
     height: 120px;
     margin-left: 19%;
-    margin-bottom: 20px;
     border: solid;
     border-color: rgb(218, 218, 218);
+    position: relative;
+    margin-bottom: 15px;
 }
+
 
 .form-select{
     margin-bottom: 10px;
@@ -66,10 +53,6 @@ body{
     width: 50px;
 }
 
-#buttonPoke{
-    margin-top: 10px;
-    margin-bottom: 370px;
-}
 
 .pokemonData{
     font-size: 25px;
@@ -78,7 +61,63 @@ body{
     text-align: center;
     margin-bottom: 20px;
     background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+
+#dataId{
+    margin-left: 3px;
+    margin-top: 19px;
+    margin-left: -1px;
+}
+
+
+
+#dataName{
     border: solid;
     border-color: rgb(218,218,218);
-    border-radius: 5px;
+}
+
+
+.paginationButtons{
+    margin-top: 380px;
+    margin-left: 180px;
+    background-color: rgb(138, 0, 0);
+}
+
+
+.pokeInfo {
+    position: absolute;
+    top: 480px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 15px;
+    padding: 15px;
+    background-color: rgb(133, 255, 133);
+    border: solid;
+    width: 315px;
+    height: 295px;
+}
+
+.height{
+    margin-left: 10px;
+}
+
+h3{
+    font-size: 16px;
+}
+
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left; 
+    width: 180px; 
+    max-width: 180px; 
+    white-space: nowrap;
 }
