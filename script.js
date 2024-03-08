@@ -104,7 +104,7 @@ const renderPokemon = async (pokemon) => {
     }
     pokemonNumber.innerHTML = '';
     pokemonName.innerHTML = 'Loading...';
-    let data = await fetchPokemon(pokemon);
+    const data = await fetchPokemon(pokemon);
     if (data){
         pokemonName.innerHTML = data.name;
         pokemonNumber.innerHTML = data.id;
@@ -112,16 +112,16 @@ const renderPokemon = async (pokemon) => {
         pokemonType.innerHTML = types;
         pokemonHeight.innerHTML = data.height;
         pokemonWeight.innerHTML = data.weight;
-        let firstAbility = data.abilities[0].ability.name;
+        const firstAbility = data.abilities[0].ability.name;
         pokemonAbilities.innerHTML = firstAbility;
         pokemonbBaseExperience.innerHTML = data.base_experience;
         pokemonImg.src = data.sprites.versions['generation-v']['black-white']['animated']['front_default'];
         formControl.value = '';
         searchPokemon = data.id;
         await verifyType(data);
-    } else {
-        clear();
+        return;
     }
+    clear();
 }
 
 form.addEventListener('submit' , (event) => {
