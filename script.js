@@ -12,7 +12,6 @@ const pokemonbBaseExperience = document.querySelector('.pokemonbBaseExperience')
 const pokemonType = document.querySelector('.pokemonType');
 const pokeInfo = document.querySelector('.pokeInfo');
 
-
 let searchPokemon = 1;
 
 function clear(){
@@ -38,61 +37,64 @@ const fetchPokemon = async (pokemon) => {
 
 const verifyType = async (data) => {
     const firstType = data.types[0].type.name;
-    if (firstType === 'grass') {
-        pokeInfo.style.backgroundColor = 'rgb(133, 255, 133)';
-    } 
-    else if (firstType === 'fire') {
-        pokeInfo.style.backgroundColor = 'rgb(255, 99, 71)'; 
-    } 
-    else if (firstType === 'water') {
-        pokeInfo.style.backgroundColor = 'rgb(0, 191, 255)'; 
-    } 
-    else if (firstType === 'bug') {
-        pokeInfo.style.backgroundColor = 'rgb(159, 216, 67)'; 
-    } 
-    else if (firstType === 'normal') {
-        pokeInfo.style.backgroundColor = 'rgb(251, 194, 161)'; 
-    } 
-    else if (firstType === 'poison') {
-        pokeInfo.style.backgroundColor = 'rgb(87, 18, 73)'; 
-    } 
-    else if (firstType === 'electric') {
-        pokeInfo.style.backgroundColor = 'rgb(243, 220, 40)'; 
-    } 
-    else if (firstType === 'ground') {
-        pokeInfo.style.backgroundColor = 'rgb(218, 170, 81)'; 
-    } 
-    else if (firstType === 'fighting') {
-        pokeInfo.style.backgroundColor = 'rgb(131, 42, 26)'; 
-    } 
-    else if (firstType === 'psychic') {
-        pokeInfo.style.backgroundColor = 'rgb(254, 189, 215)'; 
-    } 
-    else if (firstType === 'rock') {
-        pokeInfo.style.backgroundColor = 'rgb(201, 152, 10)'; 
-    } 
-    else if (firstType === 'ghost') {
-        pokeInfo.style.backgroundColor = 'rgb(42, 3, 59)'; 
+    switch (firstType) {
+        case 'grass':
+            pokeInfo.style.backgroundColor = 'rgb(133, 255, 133)';
+            break;
+        case 'fire':
+            pokeInfo.style.backgroundColor = 'rgb(255, 99, 71)';
+            break;
+        case 'water':
+            pokeInfo.style.backgroundColor = 'rgb(0, 191, 255)';
+            break;
+        case 'bug':
+            pokeInfo.style.backgroundColor = 'rgb(159, 216, 67)';
+            break;
+        case 'normal':
+            pokeInfo.style.backgroundColor = 'rgb(251, 194, 161)';
+            break;
+        case 'poison':
+            pokeInfo.style.backgroundColor = 'rgb(87, 18, 73)';
+            break;
+        case 'electric':
+            pokeInfo.style.backgroundColor = 'rgb(243, 220, 40)';
+            break;
+        case 'ground':
+            pokeInfo.style.backgroundColor = 'rgb(218, 170, 81)';
+            break;
+        case 'fighting':
+            pokeInfo.style.backgroundColor = 'rgb(131, 42, 26)';
+            break;
+        case 'psychic':
+            pokeInfo.style.backgroundColor = 'rgb(254, 189, 215)';
+            break;
+        case 'rock':
+            pokeInfo.style.backgroundColor = 'rgb(201, 152, 10)';
+            break;
+        case 'ghost':
+            pokeInfo.style.backgroundColor = 'rgb(42, 3, 59)';
+            break;
+        case 'fairy':
+            pokeInfo.style.backgroundColor = 'rgb(255, 127, 211)';
+            break;
+        case 'ice':
+            pokeInfo.style.backgroundColor = 'rgb(187, 246, 255)';
+            break;
+        case 'dragon':
+            pokeInfo.style.backgroundColor = 'rgb(42, 3, 119)';
+            break;
+        case 'dark':
+            pokeInfo.style.backgroundColor = 'rgb(43, 24, 25)';
+            break;
+        case 'flying':
+            pokeInfo.style.backgroundColor = 'rgb(244, 254, 253)';
+            break;
+        case 'steel':
+            pokeInfo.style.backgroundColor = 'rgb(95, 98, 111)';
+            break;
+        default:
+            break;
     }
-    else if (firstType === 'fairy') {
-        pokeInfo.style.backgroundColor = 'rgb(255, 127, 211)'; 
-    }
-    else if (firstType === 'ice') {
-        pokeInfo.style.backgroundColor = 'rgb(187, 246, 255)'; 
-    }
-    else if (firstType === 'dragon') {
-        pokeInfo.style.backgroundColor = 'rgb(42, 3, 119)'; 
-    }
-    else if (firstType === 'dark') {
-        pokeInfo.style.backgroundColor = 'rgb(43, 24, 25)'; 
-    }
-    else if (firstType === 'flying') {
-        pokeInfo.style.backgroundColor = 'rgb(244, 254, 253)'; 
-    }
-    else if (firstType === 'steel') {
-        pokeInfo.style.backgroundColor = 'rgb(95, 98, 111)'; 
-    }
-    
 }
 
 const renderPokemon = async (pokemon) => {
@@ -124,7 +126,8 @@ const renderPokemon = async (pokemon) => {
 
 form.addEventListener('submit' , (event) => {
     event.preventDefault();
-    renderPokemon(formControl.value.toLowerCase());
+    const trimmedValue = formControl.value.trim().toLowerCase(); 
+    renderPokemon(trimmedValue);
 })
 
 buttonPrev.addEventListener('click', () => {
