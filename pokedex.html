@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/style.css">
+    <link href="https://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
+</head>
+<body>
+    <div class="containerPokedex" id="pokedex">
+        <h1 class="title">POKEDEX</h1>
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/1.gif" alt="pokemon" class="pokeImg">
+        <h1 class="pokemonData">
+            <span class="pokemonNumber">1</span> -
+            <span class="pokemonName">Bulbasaur</span>
+        </h1>
+        <form class="form">
+            <div class="input-group flex-nowrap">
+                <img src="assets/images/png-transparent-pokxe9mon-go-pokxe9mon-firered-and-leafgreen-pikachu-pokeball-background-pokemon-pokxe9mon-technology-thumbnail.png" alt="" class="input-group-text" id="addon-wrapping">
+                <input type="search" class="form-control" placeholder="Name or number..." aria-label="Poke" aria-describedby="addon-wrapping" required>
+            </div>
+        </form>
+        <div class="paginationButtons">
+            <button class="button btn-prev">Prev &lt;</button>
+            <button class="button btn-next">Next &gt;</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
